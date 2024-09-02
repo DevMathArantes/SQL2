@@ -1,0 +1,37 @@
+Sintaxe
+
+    Operadores de comparação
+
+    Igual              =
+    Maior              >
+    Menor              <
+    Maior ou igual     >=
+    Menor ou igual     <=
+    Diferente de       <>
+
+    obs:
+    Strings seguem ordem alfabética 
+    Data seguem o calendário
+
+    Operadores Lógicos
+
+    AND   OR    Not
+    00-0  00-0  0-1
+    01-0  01-1  1-0
+    10-0  10-1
+    11-1  11-1
+
+LIKE
+
+    O comando LIKE filtra valores que contenham o seu valor na seguinte sintaxe:
+
+        ...where like "X";
+        Este where filtra valores que contenham X dentro de si
+
+BEETWEN 
+
+    Coleta valores entre valores
+
+    ...where beetwen X and Y;
+    
+    Neste exemplo, serão retornados os valores presentes entre X e Y

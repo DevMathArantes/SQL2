@@ -1,0 +1,106 @@
+Consulta
+
+    O "select" seleciona colunas e "from" as tabelas, veja a sintaxe:
+
+        select X from Y;
+        X= colunas a serem mostradas
+        Y= tabela aonde se encontram as colunas
+
+    "*" serve para selecionar tudo, veja o exemplo:
+        
+        select * from Tabela;
+        (selecionou todas as colunas de Tabela)
+
+    Use "distinct" para trazer dados sem repeti-los, veja:
+
+        select distinct Nome from Pessoas;
+        (Assim teremos os diferentes nomes da tabela Pessoas sem repeti-los)
+
+Filtro
+
+    Após o comando de seleção, utilize "where" para adicionar condições de retorno, veja a sintaxe:
+        
+        select X from Y where Z;
+        (selecionou as colunas X na tabela Y que atendem a condição Z)
+
+        exemplos:
+
+            select * from Pessoas where nome = 'Fulano';
+            select * from Pessoas where idade > 18; 
+
+Ordenar
+
+    ...order by Y;
+    Após a seleção, o order by ordena pela coluna Y
+
+    Para inverter a ordem, adicione desc após o comando order by, veja o exemplo:
+
+    select * from Tabela where Id <> 0 order by Idade desc;
+
+    Neste exemplo, foram retornadas todas as colunas de "Tabela" que possuem Id diferente de 0, 
+    ordenadas em ordem decrescente pela idade (o order by é asc ou crescente por padrão)
+
+Apelidos 
+
+    select X as Y...
+    X poderá ser chamado como Y (a coluna não foi renomeada, é apenas um apelido)
+    obs: o "as" pode ser utilizado tanto em colunas quanto em tabelas
+
+Limite de retorno
+
+    LIMIT
+
+    Após a consulta, adicione "limit x" para dizer quantas linhas devem ser retornadas 
+    (x = total de linhas)
+
+    exemplo:
+
+    select Nome from Campeoes order by Pontuação desc limit 10;
+    (este comando retornou o nome dos 10 campeões com maior pontuação)
+
+        LIMIT possui um outro comando, o offset (que serve para pular registros)
+    
+        exemplo:
+        select Nome from Campeoes order by Pontuacao desc limit 10 offset 10;
+        (neste exemplo teremos o mesmo retorno, porém contando a partir do 11 melhor)
+
+
+    A cláusula LIMIT é amplamente utilizada em SGBDs como MySQL, PostgreSQL e SQLite. Sua 
+    principal função é restringir o número de registros retornados por uma consulta. Isso
+    é particularmente útil em grandes conjuntos de dados, onde retornar todos os registros
+     pode ser ineficiente ou desnecessário.
+
+
+    TOP
+    exemplo:
+
+    select top 10 Nome from Campeoes order by Pontuacao desc;
+    (retornou o nome dos 10 campeões com maior pontuação)
+
+    Por outro lado, a palavra-chave TOP é usada em sistemas como Microsoft SQL Server e 
+    MS Access. Ela serve ao mesmo propósito que a cláusula LIMIT, mas sua sintaxe é diferente.
+
+Nulos
+
+    ISNULL
+    Esse comando seleciona linhas de colunas com valor nulo, exemplo:
+
+    ...where Coluna isnull;
+
+    NOTNULL
+    Esse comando selecia linhas de colunas com valor não nulo, exemplo:
+
+    ...where Coluna notnull;
+
+Comparar string 
+
+    LIKE
+
+    ...where like 'X%';
+    Retorna linhas que comecem com x
+
+    ...where like '%X';
+    Retorna linhas que terminem com x
+
+     ...where like '%X%';
+    Retorna linhas que contenha x

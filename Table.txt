@@ -1,0 +1,103 @@
+Criar tabela
+
+    create table X(
+        Y Z N
+        ...
+    )
+
+    X = nome da tabela
+    Y = nome da coluna
+    Z = tipo da coluna
+    N = especificação adicional (não obrigatória)
+    
+    Exemplo:
+
+    create table Pessoa(
+        ID int primary key,
+        Nome varchar(50),
+    )
+
+    primary key : identifica a coluna como referência da tabela, os dados deste tipo de coluna,
+    não podem se repetir (devem ser únicas e exclusivas de cada cadastro) e não podem ser nulos
+
+Tipos de dados: 
+
+    CHAR (X): Esta coluna irá armazenar Strings com tamanho obrigatoriamente = X
+    VARCHAR(X): Esta coluna irá armazenar Strings com tamanho obrigatoriamente <= X
+    INT: Esta coluna armazena valores númericos inteiros
+    FLOAT: Esta coluna armazena valores númericos não inteiros
+    DATE: Armazena datas sem informações de horário.
+    TIME: Armazena informações de horário.
+    TIMESTAMP: Combina data e horário em um único tipo.
+    BOOLEAN (BOOL): Armazena valores verdadeiros ou falsos.
+    BLOB (Binary Large Object): Armazena dados binários, como imagens, vídeos ou arquivos.
+    BIT: Armazena valores binários, como 0 ou 1.
+    TEXT: Strings grandes
+    DECIMAL (X,Y): números decimais, X= casas antes da vírgula e Y= casas após a virgula 
+
+Alterar tabela
+
+    alter table X add Y...;
+
+    X= tabela a ser alterada
+    Y= nova coluna
+    ...= especificações da coluna (tipo, comportamento, etc...)
+
+    alter table X drop column Y;
+
+    X= tabela a ser alterada
+    Y= coluna a ser excluída
+
+Excluir tabela
+
+    drop table X;
+
+    X= tabela a ser apagada
+
+Chave estrangeira
+
+    (Dentro do create table):
+
+    ...
+    foreign key (X) references Y (Z)
+
+    X= coluna a virar uma chave estrangeira
+    Y= tabela externa a se relacionar
+    Z= coluna da tabela externa (primary key da mesma)
+
+    Caso utilize o on delete cascate após a declaração da foreign key, caso o registro dessa chave seja apagado, todos os 
+    outros registros relacionados também serão deletados 
+
+Inserir valores
+
+    insert into X (XX) values (Y);
+
+    X= tabela
+    XX= colunas selecionadas
+    Y= dados a serem recebidos
+    obs: colunas e dados a serem inseridos, são separados por "," e organizados de forma respectiva
+    Use (Y1), (Y2), ... para inserir muitos dados por vez
+
+    Também é possivel filtrar valores a adicionar da seguinte forma
+
+    insert into X (XX) select (YY) from Y...;
+
+    As colunas XX da tabela X vão receber os valores respectivos das colunas YY da tabela Y 
+    (que pode ou não possuir condições)
+
+Atualizar dados
+
+    UPDATE 
+
+    update X set Y = Yy where Z;
+    Atualiza os dados da tabela X na coluna Y para Yy pela condição Z
+    obs: sempre use where para especificar
+
+Deletar dados
+
+    DELETE
+
+    delete from X where Y;
+    
+    Íra deletar os dados da tabela X pela condição Y
+
