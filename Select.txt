@@ -92,6 +92,7 @@ Nulos
 
     ...where Coluna notnull;
 
+
 Comparar string 
 
     LIKE
@@ -104,3 +105,9 @@ Comparar string
 
      ...where like '%X%';
     Retorna linhas que contenha x
+
+
+Comparações em diversos dados
+
+    where X in (Y,Z,N...)
+    esse where irá retornar todos as X linhas com valores Y, Z, N... 

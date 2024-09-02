@@ -21,6 +21,8 @@ Sintaxe
     10-0  10-1
     11-1  11-1
 
+    AND tem preferência acima de OR, organize com "( )"
+
 LIKE
 
     O comando LIKE filtra valores que contenham o seu valor na seguinte sintaxe:
