@@ -111,3 +111,43 @@ Comparações em diversos dados
 
     where X in (Y,Z,N...)
     esse where irá retornar todos as X linhas com valores Y, Z, N... 
+
+Selecionar valores 
+
+    MAX
+    select max(X) from Y;
+    Retornou o maior valor da coluna X na tabela Y
+
+    MIN
+    select min(X) fron Y;
+    Retornou o menor valor da coluna X na tabela Y
+
+Calcular valores
+
+    SUM
+    select sum(X) as 'x' from Y;
+    esse comando mostrou a soma de todos os dados de X da tabela Y e 
+    as nomeou de x (não obrigatório a nomeação, mas recomendado)
+
+    AVG
+    select avg(X) from Y;
+    esse comando mostrou a média de valores presentes na coluna X da
+    tabela Y
+
+    COUNT 
+    select count(X)...
+    esse comando retornou quantas linhas possui a coluna X
+
+Agrupar dados
+
+    GROUP BY
+    Este comando retorna um valor diferente de cada agrupamento
+
+    exemplo: 
+    select especie from passaros group by cor;
+    este comando retornará uma espécie de cada cor de passaros
+
+    Com o group by, não se pode utilizar where, para adicionar 
+    condições, utilize: 
+    ...group by X having Y;
+    X= coluna a agrupar, Y= condição de retorno 

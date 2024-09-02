@@ -1,0 +1,18 @@
+create table Testes(
+  	Teste1 int,
+  	Teste2 int,
+ 	Teste3 varchar(50),
+  	Teste4 varchar(50)
+)
+
+insert into Testes (Teste1, Teste2, Teste3, Teste4) 
+values 
+(1, 1, 'matheus', 'arantes'),
+(1, 2, 'matheus', 'ferreira'),
+(1, 3, 'matheus arantes', 'ferreira'),
+(2, 4, 'matheus', 'arantes ferreira'),
+(2, 5, 'arantes', 'ferreira'),
+(2, 6, 'arantes ferreira', 'matheus'),
+(3, 7, 'arantes', 'ferreira matheus'),
+(3, 8, 'ferreira', 'matheus arantes'),
+(3, 9, 'ferreira matheus', 'arantes');
